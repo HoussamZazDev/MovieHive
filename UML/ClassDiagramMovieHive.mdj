@@ -1,0 +1,166 @@
+{
+  "_type": "Project",
+  "_id": "AAAAAAFF+qBFK6M3Z8Y=",
+  "name": "MovieHive",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "AAAAAAFF+qBFK6M3Z8c=",
+      "name": "Model",
+      "ownedElements": [
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM3Z8g=",
+          "name": "User",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z8k="},
+            {"name": "username", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z8o="},
+            {"name": "email", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z8s="},
+            {"name": "password_hash", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z8w="},
+            {"name": "avatar_url", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z80="},
+            {"name": "role", "type": "enum(free|premium|admin)", "_id": "AAAAAAFF+qBFLKM3Z84="},
+            {"name": "created_at", "type": "timestamp", "_id": "AAAAAAFF+qBFLKM3Z88="},
+            {"name": "last_login", "type": "timestamp", "_id": "AAAAAAFF+qBFLKM3Z9A="}
+          ],
+          "operations": [
+            {"name": "watchlist", "returnType": "Media[]", "_id": "AAAAAAFF+qBFLKM3Z9E="},
+            {"name": "getRecommendations", "returnType": "Media[]", "_id": "AAAAAAFF+qBFLKM3Z9I="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM3Z9M=",
+          "name": "Media",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z9Q="},
+            {"name": "title", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z9U="},
+            {"name": "type", "type": "enum(movie|series)", "_id": "AAAAAAFF+qBFLKM3Z9Y="},
+            {"name": "release_date", "type": "date", "_id": "AAAAAAFF+qBFLKM3Z9c="},
+            {"name": "duration", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z9g="},
+            {"name": "synopsis", "type": "text", "_id": "AAAAAAFF+qBFLKM3Z9k="},
+            {"name": "poster_url", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z9o="},
+            {"name": "trailer_url", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z9s="},
+            {"name": "avg_rating", "type": "float", "_id": "AAAAAAFF+qBFLKM3Z9w="}
+          ],
+          "operations": [
+            {"name": "updateRating", "_id": "AAAAAAFF+qBFLKM3Z90="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM3Z94=",
+          "name": "Review",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z98="},
+            {"name": "content", "type": "text", "_id": "AAAAAAFF+qBFLKM3Z+A="},
+            {"name": "is_spam", "type": "boolean", "_id": "AAAAAAFF+qBFLKM3Z+E="},
+            {"name": "created_at", "type": "timestamp", "_id": "AAAAAAFF+qBFLKM3Z+I="},
+            {"name": "upvotes", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z+M="},
+            {"name": "reportCount", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z+Q="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM3Z+U=",
+          "name": "Rating",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z+Y="},
+            {"name": "score", "type": "int(1-5)", "_id": "AAAAAAFF+qBFLKM3Z+c="},
+            {"name": "created_at", "type": "timestamp", "_id": "AAAAAAFF+qBFLKM3Z+g="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM3Z+k=",
+          "name": "Badge",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM3Z+o="},
+            {"name": "name", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z+s="},
+            {"name": "icon_url", "type": "string", "_id": "AAAAAAFF+qBFLKM3Z+w="},
+            {"name": "description", "type": "text", "_id": "AAAAAAFF+qBFLKM3Z+0="},
+            {"name": "is_premium", "type": "boolean", "_id": "AAAAAAFF+qBFLKM3Z+4="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM3Z+8=",
+          "name": "Actor",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM4Z/A="},
+            {"name": "name", "type": "string", "_id": "AAAAAAFF+qBFLKM4Z/E="},
+            {"name": "bio", "type": "text", "_id": "AAAAAAFF+qBFLKM4Z/I="},
+            {"name": "profile_url", "type": "string", "_id": "AAAAAAFF+qBFLKM4Z/M="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM4Z/Q=",
+          "name": "MediaActor",
+          "attributes": [
+            {"name": "role_name", "type": "string", "_id": "AAAAAAFF+qBFLKM4Z/U="},
+            {"name": "is_main_cast", "type": "boolean", "_id": "AAAAAAFF+qBFLKM4Z/Y="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM4Z/c=",
+          "name": "Genre",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM4Z/g="},
+            {"name": "name", "type": "string", "_id": "AAAAAAFF+qBFLKM4Z/k="},
+            {"name": "description", "type": "text", "_id": "AAAAAAFF+qBFLKM4Z/o="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM4Z/s=",
+          "name": "MediaGenre",
+          "attributes": [
+            {"name": "is_primary", "type": "boolean", "_id": "AAAAAAFF+qBFLKM4Z/w="}
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "AAAAAAFF+qBFLKM4Z/0=",
+          "name": "Recommendation",
+          "attributes": [
+            {"name": "id", "type": "int", "_id": "AAAAAAFF+qBFLKM4aAA="},
+            {"name": "algorithm_version", "type": "string", "_id": "AAAAAAFF+qBFLKM4aAE="},
+            {"name": "generated_at", "type": "timestamp", "_id": "AAAAAAFF+qBFLKM4aAI="},
+            {"name": "score", "type": "float", "_id": "AAAAAAFF+qBFLKM4aAM="}
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "UMLAssociation",
+      "_id": "AAAAAAFF+qBFLKM4aAQ=",
+      "end1": {"reference": "AAAAAAFF+qBFLKM3Z8g=", "multiplicity": "1"},
+      "end2": {"reference": "AAAAAAFF+qBFLKM3Z9M=", "multiplicity": "0..*", "aggregation": "shared"}
+    },
+    {
+      "_type": "UMLAssociation",
+      "_id": "AAAAAAFF+qBFLKM4aAU=",
+      "end1": {"reference": "AAAAAAFF+qBFLKM3Z8g=", "multiplicity": "1"},
+      "end2": {"reference": "AAAAAAFF+qBFLKM3Z94=", "multiplicity": "0..*"}
+    },
+    {
+      "_type": "UMLAssociation",
+      "_id": "AAAAAAFF+qBFLKM4aAY=",
+      "end1": {"reference": "AAAAAAFF+qBFLKM3Z9M=", "multiplicity": "1"},
+      "end2": {"reference": "AAAAAAFF+qBFLKM3Z94=", "multiplicity": "0..*"}
+    },
+    {
+      "_type": "UMLAssociation",
+      "_id": "AAAAAAFF+qBFLKM4aAc=",
+      "end1": {"reference": "AAAAAAFF+qBFLKM3Z9M=", "multiplicity": "1"},
+      "end2": {"reference": "AAAAAAFF+qBFLKM4Z/Q=", "multiplicity": "0..*"}
+    },
+    {
+      "_type": "UMLAssociation",
+      "_id": "AAAAAAFF+qBFLKM4aAg=",
+      "end1": {"reference": "AAAAAAFF+qBFLKM4Z+8=", "multiplicity": "1"},
+      "end2": {"reference": "AAAAAAFF+qBFLKM4Z/Q=", "multiplicity": "0..*"}
+    }
+  ]
+}
